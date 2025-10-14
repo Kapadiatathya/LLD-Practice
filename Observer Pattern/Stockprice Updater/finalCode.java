@@ -1,5 +1,3 @@
-
-// Main.java - single-file demo for interviews
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.ExecutorService;
