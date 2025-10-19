@@ -1,6 +1,3 @@
-// Abstract Factory Pattern Example: Pizza Ingredients
-
-// ---------- Ingredient Interfaces ----------
 interface Dough {
     String toString();
 }
@@ -17,7 +14,7 @@ interface Clam {
     String toString();
 }
 
-// ---------- Concrete Ingredients for NY ----------
+
 class ThinCrustDough implements Dough {
     public String toString() {
         return "Thin Crust Dough";
@@ -42,7 +39,7 @@ class FreshClam implements Clam {
     }
 }
 
-// ---------- Concrete Ingredients for Chicago ----------
+
 class ThickCrustDough implements Dough {
     public String toString() {
         return "Extra Thick Crust Dough";
@@ -67,7 +64,7 @@ class FrozenClam implements Clam {
     }
 }
 
-// ---------- Abstract Factory ----------
+
 interface PizzaIngredientFactory {
     Dough createDough();
 
@@ -78,7 +75,7 @@ interface PizzaIngredientFactory {
     Clam createClam();
 }
 
-// ---------- Concrete Factories ----------
+
 class NYPizzaIngredientFactory implements PizzaIngredientFactory {
     public Dough createDough() {
         return new ThinCrustDough();
@@ -115,7 +112,6 @@ class ChicagoPizzaIngredientFactory implements PizzaIngredientFactory {
     }
 }
 
-// ---------- Abstract Product ----------
 abstract class Pizza {
     String name;
     Dough dough;
@@ -154,7 +150,6 @@ abstract class Pizza {
     }
 }
 
-// ---------- Concrete Pizza ----------
 class ClamPizza extends Pizza {
     PizzaIngredientFactory ingredientFactory;
 
@@ -171,7 +166,6 @@ class ClamPizza extends Pizza {
     }
 }
 
-// ---------- Creator (Store) ----------
 abstract class PizzaStore {
     public Pizza orderPizza(String type) {
         Pizza pizza = createPizza(type);
@@ -212,7 +206,6 @@ class ChicagoPizzaStore extends PizzaStore {
     }
 }
 
-// ---------- Client ----------
 public class AbstractFactoryPizzaDemo {
     public static void main(String[] args) {
         PizzaStore nyStore = new NYPizzaStore();
