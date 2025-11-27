@@ -53,7 +53,7 @@ public class TemplateDemo {
 
         @Override
         boolean customerWantsCondiments() {
-            return false; // example of hook logic
+            return false;
         }
     }
     public static void main(String[] args) {
